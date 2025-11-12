@@ -1,0 +1,18 @@
+# Flutter/Dart
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+pubspec.lock
+build/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+*** End Patch*** 】!【assistant ಗಂಟ to=functions.apply_patch մասնրգjson code_executor_reasoning: APPLIED_PATCH_SUMMARY *** Begin Patch
+

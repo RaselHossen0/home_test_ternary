@@ -1,0 +1,19 @@
+include: package:lints/recommended.yaml
+
+analyzer:
+  exclude:
+    - "build/**"
+    - "api/**"
+  language:
+    strict-raw-types: true
+    strict-inference: true
+    strict-casts: true
+
+linter:
+  rules:
+    - prefer_const_constructors
+    - prefer_const_literals_to_create_immutables
+    - prefer_final_locals
+    - always_use_package_imports
+*** End Patch***  */}
+

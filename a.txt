@@ -1,0 +1,291 @@
+Ternary Solutions Inc. — Mobile Developer Take-
+Home Test
+Role: Mobile Software Engineer (iOS/Android/Cross-Platform)
+Estimated Time: 5–6 hours
+Due Date: 23:59:59 November 15, 2025
+Overview
+Acme Payments Inc. is building a task management application to help teams
+and individuals stay organized. The app needs to work seamlessly both online
+and offline, with reliable data synchronization.
+Your mission: Build a mobile application that can manage tasks, sync with a
+backend API, and work offline using solid mobile development principles.
+Core Requirements
+Functional Requirements
+• Task Management: Create, read, update, and delete tasks
+• Task Status: Support task statuses (pending, in-progress, completed)
+• Offline Support: App must work fully offline with local data persistence
+• Data Synchronization: Sync local changes with backend when online
+• Filtering & Sorting: Filter tasks by status, category, and sort by
+date/priority
+• Search: Search functionality to find tasks by title or description
+• Categories/Tags: Organize tasks with categories or tags
+• Basic Analytics: Display summary statistics (total tasks, completed
+tasks, etc.)
+Technical Requirements
+• Architecture: Use appropriate architecture patterns (MVVM, Clean Ar-
+chitecture, etc.)
+• State Management: Implement proper state management solution
+• Local Storage: Use local database/caching (SQLite, Realm, Room, Core
+Data, etc.)
+• API Integration: Integrate with provided mock API backend
+• Error Handling: Graceful error handling and user feedback
+• Testing: Write unit tests and UI/integration tests (>70% coverage pre-
+ferred)
+• Code Quality: Follow platform-specific best practices and coding stan-
+dards
+1
+Important Guidelines
+Code Integrity Requirements
+AI Usage Guidelines: We want to see your authentic problem-solving ap-
+proach while recognizing that AI tools can be valuable for learning and debug-
+ging. Here are the clear boundaries:
+What IS allowed:
+• Oﬀicial documentation (platform docs, library documentation)
+• Stack Overflow and similar Q&A sites for specific syntax questions
+• Code examples from oﬀicial tutorials and guides
+• AI for debugging: Using AI to help understand error messages or debug
+issues
+• AI for idea generation: Discussing architectural approaches or design
+patterns
+• AI for explanations: Getting help understanding concepts or best prac-
+tices
+What is NOT allowed:
+• Direct code generation: Copy-pasting AI-generated code blocks or
+functions
+• AI-written implementations: Having AI write your core business logic
+• Code completion tools: GitHub Copilot or similar auto-completion
+during coding
+MANDATORY: AI Usage Documentation
+If you use AI tools for debugging or idea generation, you MUST document
+this in your README.md file under a section called “AI Usage Disclosure”
+including:
+• Which AI tools you used (ChatGPT, Claude, etc.)
+• What you asked for help with (debugging errors, understanding concepts,
+etc.)
+• All prompts you used (copy-paste your actual questions)
+• How the AI assistance influenced your approach
+Example documentation:
+## AI Usage Disclosure
+### Tools Used:
+- ChatGPT-4 for debugging assistance
+### Prompts Used:
+2
+1. "I'm getting a network error when calling the API. Here's my code: [ code snippet]. What m
+2. "What's the best practice for handling offline data synchronization in React Native?"
+### How AI Helped:
+- Helped identify that I needed to handle network errors properly
+- Suggested using a queue system for offline operations
+We value transparency and want to understand your learning process while
+ensuring the core implementation represents your skills.
+API Specification
+The mock API backend is provided in the api/ directory. See docs/API_SPEC.md
+for detailed API documentation.
+Key Endpoints:
+• GET /api/tasks - Fetch all tasks
+• GET /api/tasks/:id - Fetch a single task
+• POST /api/tasks - Create a new task
+• PUT /api/tasks/:id - Update a task
+• DELETE /api/tasks/:id - Delete a task
+• GET /api/categories - Fetch all categories
+Task Model:
+{
+"id": "string",
+"title": "string",
+"description": "string",
+"status": "pending" | "in-progress" | "completed",
+"category": "string",
+"priority": "low" | "medium" | "high",
+"dueDate": "ISO 8601 date string",
+"createdAt": "ISO 8601 date string",
+"updatedAt": "ISO 8601 date string"
+}
+Expected Features
+Core Screens
+1. Task List Screen
+3
+• Display all tasks in a list
+• Filter by status (pending, in-progress, completed)
+• Filter by category
+• Sort by date, priority, or title
+• Search functionality
+• Pull-to-refresh to sync with server
+• Visual indicator for offline/online status
+2. Task Detail/Edit Screen
+• View task details
+• Edit task properties
+• Delete task
+• Change task status
+3. Create Task Screen
+• Form to create new tasks
+• All required fields (title, description, status, category, priority, due
+date)
+4. Dashboard/Analytics Screen (Optional but recommended)
+• Total tasks count
+• Tasks by status breakdown
+• Tasks by category breakdown
+• Completion rate
+Offline Behavior
+• App must work fully offline
+• New tasks created offline should be queued and synced when online
+• Task updates made offline should sync when online
+• Deletions made offline should sync when online
+• Handle sync conflicts appropriately (last-write-wins or merge strategy)
+• Show visual indicators for unsynced changes
+Acceptance Criteria
+Your solution will be considered complete when it meets ALL of the following
+criteria:
+Functional Requirements
+□ Task CRUD: Successfully create, read, update, and delete tasks
+□ Status Management: Tasks can be marked as pending, in-progress, or
+completed
+□ Offline Support: App works fully offline with local data persistence
+□ Data Sync: Changes sync with backend when connection is restored
+□ Filtering: Filter tasks by status and category
+□ Sorting: Sort tasks by date, priority, or title
+4
+□ Search: Search tasks by title or description
+□ Error Handling: Graceful error handling with user-friendly messages
+□ UI/UX: Clean, intuitive user interface following platform design guide-
+lines
+Technical Requirements
+□ Architecture: Uses appropriate architecture pattern (MVVM, Clean Ar-
+chitecture, etc.)
+□ State Management: Proper state management implementation
+□ Local Storage: Local database/caching implemented correctly
+□ API Integration: Successfully integrates with mock API backend
+□ Sync Logic: Robust offline-to-online synchronization
+□ Unit Tests: Comprehensive unit tests for core logic (>70% coverage
+preferred)
+□ UI Tests: UI/integration tests for critical user flows
+□ Code Quality: Follows platform-specific best practices and coding stan-
+dards
+□ Error Handling: Handles network errors, API errors, and edge cases
+gracefully
+Documentation Requirements
+□ README.md: Contains clear installation, setup, and usage instruc-
+tions
+□ Architecture Documentation: Explains architectural decisions and
+patterns used
+□ Code Comments: Key functions and classes are properly documented
+□ Test Instructions: Clear instructions for running the test suite
+□ Build Instructions: Instructions for building and running the app
+Quality Standards
+□ Runnable App: App builds and runs without errors
+□ Test Execution: All tests pass when running test suite
+□ Offline Functionality: App works correctly without network connection
+□ Sync Functionality: Data syncs correctly when connection is restored
+□ Edge Case Handling: Handles empty states, loading states, and error
+states appropriately
+□ Performance: App performs smoothly without noticeable lag
+Professional Standards
+□ Git Ready: Includes proper .gitignore and project structure
+□ Clean Git History: Meaningful commit messages following conventional
+commit format
+5
+□ Production Mindset: Code is organized as if it were going into a pro-
+duction system
+□ Maintainable: Code structure allows for easy extension and modification
+□ Platform Guidelines: Follows iOS Human Interface Guidelines or Ma-
+terial Design principles
+Minimum Passing Score: Must meet at least 80% of criteria above
+Excellent Score: Meets 95%+ of criteria plus demonstrates exceptional code
+quality and architecture
+Deliverables
+Required Files:
+1. Mobile application project with organized source code
+2. Unit tests (platform-appropriate testing framework)
+3. UI/Integration tests for critical flows
+4. README.md explaining setup, architecture, and design decisions
+5. Dependencies file (package.json, Podfile, build.gradle, pubspec.yaml,
+etc.)
+6. Screenshots/Demo: Screenshots or video demo showing the app in ac-
+tion
+7. Test execution results (screenshots or text output of test results)
+Project Structure Example:
+your_project/
+￿￿￿ src/ # Source code (or platform-specific structure)
+￿￿￿ tests/ # Test files
+￿￿￿ api/ # Mock API server (if modified)
+￿￿￿ README.md # Documentation
+￿￿￿ .gitignore # Git ignore rules
+￿￿￿ [platform config files] # iOS: Podfile, Android: build.gradle, etc.
+Evaluation Criteria
+Your submission will be evaluated on:
+concerns
+Criteria Weight Description
+Code Quality 25% Readability, structure, and platform best
+practices
+Architecture 20% Proper architecture patterns and separation of
+6
+Criteria Weight Description
+Feature
+20% Correctness and completeness of features
+Implementation
+Offline/Sync
+15% Robust offline support and synchronization
+Logic
+Testing 15% Coverage and quality of tests
+Error Handling 5% Graceful handling of edge cases and errors
+Bonus Features (Optional)
+Impress us with additional functionality:
+• Advanced Filtering: Multiple filter combinations
+• Task Priorities: Visual priority indicators
+• Due Date Reminders: Notifications for upcoming due dates
+• Dark Mode: Support for dark/light theme
+• Animations: Smooth transitions and animations
+• Accessibility: Full accessibility support
+• Performance Optimization: Image caching, list virtualization, etc.
+• Advanced Analytics: Charts and graphs for task statistics
+Submission Instructions
+How to Submit:
+1. GitHub Repository (preferred): Share a public repository link
+2. ZIP Archive: Email compressed project folder
+Before Submission Checklist:
+□ App builds and runs with minimal setup
+□ All tests pass
+□ README includes clear installation and usage instructions
+□ Mock API server can be started easily
+□ Code is well-commented and follows platform conventions
+□ Screenshots/demo included showing the app in action
+□ Test results documented (test output showing coverage)
+□ Clean git commits with descriptive messages (e.g., “feat: add task list
+screen”, “fix: handle offline sync conflicts”)
+Submission Email:
+To: [talen@ternary.solutions]
+7
+CC: [nreza@ternary.solutions]
+Subject: Mobile Take-Home Test Submission - [Your Name]
+Hi Ternary Solutions Team,
+Please find my completed take-home test submission:
+- GitHub Repository: [link] OR
+- Attached ZIP file: [filename]
+The project includes:
+- Complete mobile application implementation
+- Test suite with [X]% coverage
+- Comprehensive documentation
+- Screenshots/demo of the app
+Platform: [iOS/Android/React Native/Flutter/etc.]
+Time invested: [X hours]
+Best regards,
+[Your Name]
+Support
+Questions? Contact the hiring team at talent@ternary.solutions
+Got Stuck? Contact technical supervisor at nreza@ternary.solutions
+Technical Issues? We’re here to help - don’t let technical blockers prevent
+you from showcasing your skills.
+Final Notes
+• Focus on quality over quantity - we prefer well-structured, tested code
+over extensive features
+• Document your design decisions - explain your architectural choices
+in the README
+• Handle edge cases gracefully - show us how you think about error
+scenarios
+• Make it production-ready - write code you’d be proud to deploy
+• Test your offline functionality - ensure the app truly works without
+network
+Good luck! We’re excited to see your approach to building a robust mobile
+application with offline support.
+8
+Tenary Solutions Inc. - Confidential Take-Home Assessment
+© 2025 Ternary Solutions Inc. All rights reserved.
+9

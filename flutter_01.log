@@ -1,0 +1,96 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter create .
+
+## exception
+
+PathExistsException: PathExistsException: Cannot create link, path = '/Users/md.raselhossen/Documents/codes/home_test/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows' (OS Error: File exists, errno = 17)
+
+```
+#0      _Link.throwIfError (dart:io/link.dart:339:7)
+#1      _Link.createSync (dart:io/link.dart:267:5)
+#2      ForwardingLink.createSync (package:file/src/forwarding/forwarding_link.dart:20:16)
+#3      ForwardingLink.createSync (package:file/src/forwarding/forwarding_link.dart:20:16)
+#4      _createPlatformPluginSymlinks (package:flutter_tools/src/flutter_plugins.dart:990:12)
+#5      createPluginSymlinks (package:flutter_tools/src/flutter_plugins.dart:912:5)
+#6      refreshPluginsList (package:flutter_tools/src/flutter_plugins.dart:1027:5)
+<asynchronous suspension>
+#7      FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:373:5)
+<asynchronous suspension>
+#8      CreateCommand.runCommand (package:flutter_tools/src/commands/create.dart:454:9)
+<asynchronous suspension>
+#9      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1450:27)
+<asynchronous suspension>
+#10     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#11     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#12     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:421:9)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:364:5)
+<asynchronous suspension>
+#15     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:131:9)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#17     main (package:flutter_tools/executable.dart:94:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.27.2, on macOS 26.0.1 25A362 darwin-arm64, locale en-BD)
+    [32m•[39m Flutter version 3.27.2 on channel stable at /Users/md.raselhossen/flutter
+    [32m•[39m Upstream repository git@github.com:flutter/flutter.git
+    [32m•[39m Framework revision 68415ad1d9 (10 months ago), 2025-01-13 10:22:03 -0800
+    [32m•[39m Engine revision e672b006cb
+    [32m•[39m Dart version 3.6.1
+    [32m•[39m DevTools version 2.40.2
+
+[31m[✗][39m Android toolchain - develop for Android devices
+    [31m✗[39m Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/to/macos-android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[32m[✓][39m Xcode - develop for iOS and macOS (Xcode 16.4)
+    [32m•[39m Xcode at /Applications/Xcode.app/Contents/Developer
+    [32m•[39m Build 16F6
+    [32m•[39m CocoaPods version 1.16.2
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[33m[!][39m Android Studio (not installed)
+    [32m•[39m Android Studio not found; download from
+      https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/to/macos-android-setup for detailed instructions).
+
+[32m[✓][39m VS Code (version 1.104.1)
+    [32m•[39m VS Code at /Applications/Visual Studio Code.app/Contents
+    [32m•[39m Flutter extension version 3.122.0
+
+[32m[✓][39m Connected device (4 available)
+    [32m•[39m Rasel's iPhone (mobile)         • 00008120-001835110285A01E • ios            • iOS
+      26.0.1 23A355
+    [32m•[39m macOS (desktop)                 • macos                     • darwin-arm64   • macOS
+      26.0.1 25A362 darwin-arm64
+    [32m•[39m Mac Designed for iPad (desktop) • mac-designed-for-ipad     • darwin         • macOS
+      26.0.1 25A362 darwin-arm64
+    [32m•[39m Chrome (web)                    • chrome                    • web-javascript • Google
+      Chrome 142.0.7444.162
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 2 categories.
+```
