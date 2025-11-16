@@ -11,17 +11,91 @@ class AcmeTasksApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final baseColor = Colors.teal;
+    final lightScheme = ColorScheme.fromSeed(
+      seedColor: baseColor,
+      brightness: Brightness.light,
+    ).copyWith(
+      secondary: Colors.indigo,
+      tertiary: Colors.orange,
+    );
+    final darkScheme = ColorScheme.fromSeed(
+      seedColor: baseColor,
+      brightness: Brightness.dark,
+    ).copyWith(
+      secondary: Colors.indigoAccent,
+      tertiary: Colors.orangeAccent,
+    );
+    final cardShape =
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(12));
     return MaterialApp(
       title: 'Acme Tasks',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorSchemeSeed: Colors.indigo,
+        colorScheme: lightScheme,
         brightness: Brightness.light,
         useMaterial3: true,
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          backgroundColor: lightScheme.primaryContainer,
+          foregroundColor: lightScheme.onPrimaryContainer,
+        ),
+        cardTheme: CardThemeData(
+            elevation: 1,
+            shape: cardShape,
+            margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6)),
+        chipTheme: const ChipThemeData(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
+          side: BorderSide(color: Colors.transparent),
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: lightScheme.primary,
+          foregroundColor: lightScheme.onPrimary,
+        ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(
+            backgroundColor: lightScheme.primary,
+            foregroundColor: lightScheme.onPrimary,
+          ),
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          filled: true,
+          isDense: true,
+          border: OutlineInputBorder(),
+        ),
       ),
       darkTheme: ThemeData(
-        colorSchemeSeed: Colors.indigo,
+        colorScheme: darkScheme,
         brightness: Brightness.dark,
         useMaterial3: true,
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          backgroundColor: darkScheme.primaryContainer,
+          foregroundColor: darkScheme.onPrimaryContainer,
+        ),
+        cardTheme: CardThemeData(
+            elevation: 0,
+            shape: cardShape,
+            margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6)),
+        chipTheme: const ChipThemeData(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
+          side: BorderSide(color: Colors.transparent),
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: darkScheme.primary,
+          foregroundColor: darkScheme.onPrimary,
+        ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(
+            backgroundColor: darkScheme.primary,
+            foregroundColor: darkScheme.onPrimary,
+          ),
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          filled: true,
+          isDense: true,
+          border: OutlineInputBorder(),
+        ),
       ),
       routes: {
         TaskListPage.route: (_) => const TaskListPage(),

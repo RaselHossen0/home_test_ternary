@@ -59,6 +59,36 @@ Integration:
 ```bash
 flutter test integration_test
 ```
+Coverage:
+```bash
+# Run unit/widget tests with coverage
+flutter test --coverage
+
+# Optional: view HTML report (requires lcov and genhtml installed)
+genhtml coverage/lcov.info -o coverage/html
+open coverage/html/index.html  # macOS
+```
+
+## Test Results
+The latest test run and coverage summary are captured in `docs/test-results.md`.
+
+To regenerate locally:
+```bash
+flutter clean
+flutter pub get
+flutter test --coverage
+# Append test output and coverage summary:
+dart --version > docs/test-results.md
+echo "\n# Test Run\n" >> docs/test-results.md
+flutter test --coverage >> docs/test-results.md 2>&1
+echo "\n# Coverage Summary\n" >> docs/test-results.md
+grep -n "end_of_record" -n coverage/lcov.info >/dev/null 2>&1 || true
+```
+
+If you have `lcov` installed, you can add a readable summary:
+```bash
+lcov --summary coverage/lcov.info >> docs/test-results.md
+```
 
 ## API
 Mock API endpoints:
@@ -82,9 +112,8 @@ If you used AI tools, add details here:
 - ChatGPT (for idea generation/debugging)
 
 ### Prompts Used
-- Paste your exact prompts/questions here.
+- To debug errors
 
-### How AI Helped
-- Briefly describe how AI influenced your approach/decisions.
+
 
 

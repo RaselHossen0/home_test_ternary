@@ -21,11 +21,19 @@ class TaskFilters {
   final String sortBy; // date | priority | title
   final String search;
 
-  TaskFilters copyWith(
-      {String? status, String? category, String? sortBy, String? search}) {
+  static const _no = Object();
+
+  TaskFilters copyWith({
+    Object? status = _no, // pass null explicitly to clear: status: null
+    Object? category = _no, // pass null to clear category
+    String? sortBy,
+    String? search,
+  }) {
+    final nextStatus = status == _no ? this.status : status as String?;
+    final nextCategory = category == _no ? this.category : category as String?;
     return TaskFilters(
-      status: status ?? this.status,
-      category: category ?? this.category,
+      status: nextStatus,
+      category: nextCategory,
       sortBy: sortBy ?? this.sortBy,
       search: search ?? this.search,
     );

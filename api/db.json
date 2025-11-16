@@ -1,5 +1,19 @@
 {
-  "tasks": [],
-  "categories": ["work", "personal"]
+  "tasks": [
+    {
+      "id": "sjryqnimdw6ugkjr",
+      "title": "easel",
+      "description": "Adam",
+      "status": "completed",
+      "category": "dads",
+      "priority": "high",
+      "dueDate": "2025-11-21T00:00:00.000",
+      "createdAt": "2025-11-13T03:15:28.749896",
+      "updatedAt": "2025-11-16T20:45:12.162220"
+    }
+  ],
+  "categories": [
+    "work",
+    "personal"
+  ]
 }
-

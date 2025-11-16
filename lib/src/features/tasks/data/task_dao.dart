@@ -29,7 +29,9 @@ class TaskDao {
     final db = await _db;
     final where = <String>[];
     final args = <Object?>[];
-    if (status != null && status.isNotEmpty) {
+    // Only filter by recognized statuses; ignore 'all' or any other value
+    const validStatuses = {'pending', 'in-progress', 'completed'};
+    if (status != null && status.isNotEmpty && validStatuses.contains(status)) {
       where.add('status = ?');
       args.add(status);
     }

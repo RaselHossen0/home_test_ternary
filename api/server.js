@@ -14,6 +14,16 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// Simple request logger to observe sync traffic
+app.use((req, res, next) => {
+  const start = Date.now();
+  res.on('finish', () => {
+    const ms = Date.now() - start;
+    console.log(`[API] ${req.method} ${req.originalUrl} -> ${res.statusCode} (${ms}ms)`);
+  });
+  next();
+});
+
 function readDb() {
   if (!fs.existsSync(DB_PATH)) {
     fs.writeFileSync(DB_PATH, JSON.stringify({ tasks: [], categories: ["work", "personal"] }, null, 2));
